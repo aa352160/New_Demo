@@ -9,6 +9,8 @@ ViewPager切换Fragment
 ###test4
 饼图绘制Demo
 ###test5
-空
+databinding简单Demo
 ###test6
+空
+###test7
 按钮切换ViewPager与Recyclerview
