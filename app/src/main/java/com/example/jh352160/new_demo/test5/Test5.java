@@ -8,7 +8,6 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.AbsoluteSizeSpan;
-import android.widget.TextView;
 
 import com.example.jh352160.new_demo.R;
 import com.example.jh352160.new_demo.databinding.Test5Binding;
@@ -19,7 +18,7 @@ import com.example.jh352160.new_demo.databinding.Test5Binding;
 
 public class Test5 extends AppCompatActivity{
 
-    TextView textView;
+    MyTextView textView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,7 +35,7 @@ public class Test5 extends AppCompatActivity{
         textSpan.setSpan(new AbsoluteSizeSpan(50),0,start, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
         textSpan.setSpan(new AbsoluteSizeSpan(80),start,end-1, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
         textSpan.setSpan(new AbsoluteSizeSpan(50),end-1,end, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-        textView=(TextView)findViewById(R.id.textView);
+        textView=(MyTextView)findViewById(R.id.textView);
         textView.setText(textSpan);
     }
 }

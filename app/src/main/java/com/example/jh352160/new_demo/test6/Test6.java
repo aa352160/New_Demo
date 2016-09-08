@@ -19,6 +19,7 @@ public class Test6 extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test6);
-        
+
+        textView=(TextView)findViewById(R.id.textView);
     }
 }
