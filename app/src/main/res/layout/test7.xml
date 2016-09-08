@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.example.jh352160.test_project.Test2.MyFootView
+        <com.example.jh352160.new_demo.test7.MyFootView
             android:id="@+id/swipe_load_more_footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

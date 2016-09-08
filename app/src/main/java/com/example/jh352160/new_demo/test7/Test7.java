@@ -32,7 +32,7 @@ import retrofit2.Retrofit;
  * Created by jh352160 on 2016/9/6
  */
 
-public class Test14 extends AppCompatActivity {
+public class Test7 extends AppCompatActivity {
 
     Button button;
     ViewPager viewPager;
@@ -138,7 +138,7 @@ public class Test14 extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                Test14.current=position;
+                Test7.current=position;
                 if ((position+4)>imageUrlList.size()){
                     addList(++page);
                 }

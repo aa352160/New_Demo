@@ -12,10 +12,11 @@ import com.example.jh352160.new_demo.test3.Test3;
 import com.example.jh352160.new_demo.test4.Test4;
 import com.example.jh352160.new_demo.test5.Test5;
 import com.example.jh352160.new_demo.test6.Test6;
+import com.example.jh352160.new_demo.test7.Test7;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button button1, button2, button3, button4,button5,button6;
+    Button button1, button2, button3, button4,button5,button6,button7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +30,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button4 = (Button) findViewById(R.id.button4);
         button5 = (Button) findViewById(R.id.button5);
         button6 = (Button) findViewById(R.id.button6);
+        button7 = (Button) findViewById(R.id.button7);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
         button5.setOnClickListener(this);
         button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
     }
 
     @Override
@@ -58,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button6:
                 intent = new Intent(MainActivity.this, Test6.class);
+                break;
+            case R.id.button7:
+                intent = new Intent(MainActivity.this, Test7.class);
                 break;
         }
         MainActivity.this.startActivity(intent);

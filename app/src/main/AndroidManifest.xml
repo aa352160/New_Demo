@@ -23,6 +23,7 @@
         <activity android:name=".test4.Test4"/>
         <activity android:name=".test5.Test5"/>
         <activity android:name=".test6.Test6"/>
+        <activity android:name=".test7.Test7"/>
         <activity android:name=".test2.ListFirst"/>
         <activity android:name=".test2.ListSeconde"/>
         <activity android:name=".test2.ListThird"/>
