@@ -3,7 +3,7 @@ package com.example.jh352160.new_demo.test6;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import com.example.jh352160.new_demo.R;
 
@@ -13,13 +13,12 @@ import com.example.jh352160.new_demo.R;
 
 public class Test6 extends AppCompatActivity{
 
-    RecyclerView recyclerView;
+    TextView textView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test6);
-
-        recyclerView=(RecyclerView)findViewById(R.id.recycleView);
+        
     }
 }
