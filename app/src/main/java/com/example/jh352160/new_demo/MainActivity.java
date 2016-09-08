@@ -3,7 +3,6 @@ package com.example.jh352160.new_demo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,13 +16,11 @@ import com.example.jh352160.new_demo.test6.Test6;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button button1, button2, button3, button4,button5,button6;
-    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar=(Toolbar)findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
         button1 = (Button) findViewById(R.id.button1);

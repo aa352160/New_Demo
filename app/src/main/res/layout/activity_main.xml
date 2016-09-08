@@ -12,16 +12,6 @@
     tools:context="com.example.jh352160.new_demo.MainActivity"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?android:actionBarSize"
-        android:outlineProvider="none"
-        android:elevation="1dp"
-        android:background="#bc000000"
-        style="@style/Widget.Look.HomeToolbar"
-        app:title="@string/app_name"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,6 +67,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/button6" />
+
+            <Button
+                android:text="Demo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button7" />
         </TableRow>
 
         <TableRow
