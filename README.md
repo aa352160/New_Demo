@@ -9,7 +9,7 @@ ViewPager切换Fragment
 ###test4
 饼图绘制Demo
 ###test5
-databinding简单Demo
+databinding简单Demo,textSpan Demo,自定义TextView样式
 ###test6
 暂无
 ###test7
