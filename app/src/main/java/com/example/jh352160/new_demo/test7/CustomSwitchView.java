@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -28,6 +29,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+import static java.lang.Thread.currentThread;
+
 /**
  * Created by jh352160 on 2016/9/12.
  */
@@ -45,6 +48,8 @@ public class CustomSwitchView extends LinearLayout{
     SwipeToLoadLayout swipeToLoadLayout;
     int page=0;
     ViewPagerAdapter viewPagerAdapter;
+    float mFirstY=0,mCurrentY=0,mTouchSlop=1;
+    int mDirection=0;
 
     private static final int NETWORK_OK = 0;
     private static final int LIST_CHANGE = 1;
@@ -53,7 +58,7 @@ public class CustomSwitchView extends LinearLayout{
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case NETWORK_OK:
-                    init();
+//                    init();
                     break;
                 case LIST_CHANGE:
                     addList(++page);
@@ -84,13 +89,15 @@ public class CustomSwitchView extends LinearLayout{
         call.enqueue(new Callback<GankItem>() {
             @Override
             public void onResponse(Call<GankItem> call, Response<GankItem> response) {
+                Log.i("Message",currentThread().getName());
                 allImageUrlList =new ArrayList<>();
                 for (int i = 0; i < response.body().getResults().size(); i++) {
                     allImageUrlList.add(response.body().getResults().get(i).getUrl());
                 }
-                Message message=new Message();
-                message.what=NETWORK_OK;
-                handler.sendMessage(message);
+//                Message message=new Message();
+//                message.what=NETWORK_OK;
+//                handler.sendMessage(message);
+                init();
             }
 
             @Override

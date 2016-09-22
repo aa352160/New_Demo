@@ -13,10 +13,11 @@ import com.example.jh352160.new_demo.test4.Test4;
 import com.example.jh352160.new_demo.test5.Test5;
 import com.example.jh352160.new_demo.test6.Test6;
 import com.example.jh352160.new_demo.test7.Test7;
+import com.example.jh352160.new_demo.test8.Test8;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button button1, button2, button3, button4,button5,button6,button7;
+    Button button1, button2, button3, button4,button5,button6,button7,button8,button9,button10,button11,button12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button5 = (Button) findViewById(R.id.button5);
         button6 = (Button) findViewById(R.id.button6);
         button7 = (Button) findViewById(R.id.button7);
+        button8 = (Button) findViewById(R.id.button8);
+        button9 = (Button) findViewById(R.id.button9);
+        button10 = (Button) findViewById(R.id.button10);
+        button11 = (Button) findViewById(R.id.button11);
+        button12 = (Button) findViewById(R.id.button12);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
@@ -38,6 +44,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button5.setOnClickListener(this);
         button6.setOnClickListener(this);
         button7.setOnClickListener(this);
+        button8.setOnClickListener(this);
+        button9.setOnClickListener(this);
+        button10.setOnClickListener(this);
+        button11.setOnClickListener(this);
+        button12.setOnClickListener(this);
     }
 
     @Override
@@ -64,6 +75,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button7:
                 intent = new Intent(MainActivity.this, Test7.class);
+                break;
+            case R.id.button8:
+                intent = new Intent(MainActivity.this, Test8.class);
+                break;
+            case R.id.button9:
+                intent = new Intent(MainActivity.this, Test8.class);
+                break;
+            case R.id.button10:
+                intent = new Intent(MainActivity.this, Test8.class);
+                break;
+            case R.id.button11:
+                intent = new Intent(MainActivity.this, Test8.class);
+                break;
+            case R.id.button12:
+                intent = new Intent(MainActivity.this, Test8.class);
                 break;
         }
         MainActivity.this.startActivity(intent);

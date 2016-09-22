@@ -17,13 +17,26 @@ public class TestFragment extends Fragment {
     View view;
     int count = 0;
 
+    public TestFragment() {
+    }
+
+    @Override
+    public void setArguments(Bundle args) {
+        super.setArguments(args);
+    }
+
     public TestFragment(int count) {
         this.count = count;
     }
 
     public static TestFragment newInstance(int count) {
-        return new TestFragment(count);
+       TestFragment fragment =  new TestFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("count",count);
+        fragment.setArguments(bundle);
+        return fragment;
     }
+
 
     @Nullable
     @Override

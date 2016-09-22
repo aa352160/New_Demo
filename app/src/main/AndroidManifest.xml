@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,7 @@
         <activity android:name=".test5.Test5"/>
         <activity android:name=".test6.Test6"/>
         <activity android:name=".test7.Test7"/>
+        <activity android:name=".test8.Test8"/>
         <activity android:name=".test2.ListFirst"/>
         <activity android:name=".test2.ListSeconde"/>
         <activity android:name=".test2.ListThird"/>

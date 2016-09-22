@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
@@ -25,11 +26,12 @@ import retrofit2.Retrofit;
  * Created by jh352160 on 2016/9/6
  */
 
-public class Test7 extends AppCompatActivity {
+public class Test7 extends AppCompatActivity{
 
     Button button,button1;
     CustomSwitchView customSwitchView;
     List<String> allImageUrlList;
+    Toolbar toolbar;
 
     private static final int NETWORK_OK = 0;
     private Handler handler= new Handler(){
@@ -51,6 +53,8 @@ public class Test7 extends AppCompatActivity {
         button = (Button) findViewById(R.id.button);
         button1=(Button)findViewById(R.id.button1);
         customSwitchView=(CustomSwitchView)findViewById(R.id.customSwitchView);
+        toolbar=(Toolbar)findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
