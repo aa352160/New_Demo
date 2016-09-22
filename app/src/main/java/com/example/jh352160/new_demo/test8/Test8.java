@@ -1,5 +1,6 @@
 package com.example.jh352160.new_demo.test8;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -18,7 +19,7 @@ import com.example.jh352160.new_demo.R;
 
 public class Test8 extends AppCompatActivity{
 
-    private Button button,button2,button3;
+    private Button button,button2,button3,button4;
     private ImageView imageView;
 
     @Override
@@ -28,6 +29,7 @@ public class Test8 extends AppCompatActivity{
         button=(Button) findViewById(R.id.button);
         button2=(Button) findViewById(R.id.button2);
         button3=(Button) findViewById(R.id.button3);
+        button4=(Button)findViewById(R.id.button4);
         imageView=(ImageView)findViewById(R.id.imageView);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +53,14 @@ public class Test8 extends AppCompatActivity{
             public void onClick(View v) {
                 Bitmap bitmap1= BitmapFactory.decodeResource(Test8.this.getResources(),R.drawable.category_image5);
                 imageView.setImageBitmap(bitmap1);
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Test8.this,Test8_2.class);
+                startActivity(intent);
             }
         });
     }
