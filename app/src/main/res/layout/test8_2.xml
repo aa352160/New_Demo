@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <com.example.jh352160.new_demo.test8.XfermodeView
+        android:id="@+id/xfermode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

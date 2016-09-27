@@ -74,4 +74,6 @@ public class XfermodeView extends View{
         canvas.drawBitmap(mBgBitmap,0,0,null);
         canvas.drawBitmap(mFgBitmap,0,0,null);
     }
+
+
 }

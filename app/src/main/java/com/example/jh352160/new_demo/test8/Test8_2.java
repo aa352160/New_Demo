@@ -1,9 +1,9 @@
 package com.example.jh352160.new_demo.test8;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 
 import com.example.jh352160.new_demo.R;
 
@@ -13,12 +13,16 @@ import com.example.jh352160.new_demo.R;
 
 public class Test8_2 extends AppCompatActivity {
 
-    ImageView imageView;
+    XfermodeView xfermodeView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test8_2);
-        imageView=(ImageView)findViewById(R.id.imageView);
+        xfermodeView=(XfermodeView)findViewById(R.id.xfermode);
+
+        ObjectAnimator objectAnimator=ObjectAnimator.ofFloat(xfermodeView,"translationY",1000);
+        objectAnimator.setDuration(2000);
+        objectAnimator.start();
     }
 }
