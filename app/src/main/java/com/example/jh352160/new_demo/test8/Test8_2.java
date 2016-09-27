@@ -24,5 +24,7 @@ public class Test8_2 extends AppCompatActivity {
         ObjectAnimator objectAnimator=ObjectAnimator.ofFloat(xfermodeView,"translationY",1000);
         objectAnimator.setDuration(2000);
         objectAnimator.start();
+
+
     }
 }

@@ -14,6 +14,7 @@ import com.example.jh352160.new_demo.test5.Test5;
 import com.example.jh352160.new_demo.test6.Test6;
 import com.example.jh352160.new_demo.test7.Test7;
 import com.example.jh352160.new_demo.test8.Test8;
+import com.example.jh352160.new_demo.test9.Test9;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(MainActivity.this, Test8.class);
                 break;
             case R.id.button9:
-                intent = new Intent(MainActivity.this, Test8.class);
+                intent = new Intent(MainActivity.this, Test9.class);
                 break;
             case R.id.button10:
                 intent = new Intent(MainActivity.this, Test8.class);
