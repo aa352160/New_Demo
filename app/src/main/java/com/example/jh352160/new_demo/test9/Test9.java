@@ -1,5 +1,6 @@
 package com.example.jh352160.new_demo.test9;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Outline;
 import android.graphics.drawable.Drawable;
@@ -31,7 +32,7 @@ import rx.schedulers.Schedulers;
 public class Test9 extends AppCompatActivity{
 
     private TextView textView1,textView2;
-    private Button button,button2,button3;
+    private Button button,button2,button3,button4;
     private ProgressBar progressBar;
     private ImageView imageView;
 
@@ -45,6 +46,7 @@ public class Test9 extends AppCompatActivity{
         button=(Button)findViewById(R.id.button1);
         button2=(Button)findViewById(R.id.button2) ;
         button3=(Button)findViewById(R.id.button3);
+        button4=(Button)findViewById(R.id.button4);
         imageView=(ImageView)findViewById(R.id.imageView);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +90,14 @@ public class Test9 extends AppCompatActivity{
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Test9.this,Test9_2.class));
+                startActivity(new Intent(Test9.this,Test9_2.class), ActivityOptions.makeSceneTransitionAnimation(Test9.this,imageView,"imageview").toBundle());
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Test9.this,Test9_3.class));
             }
         });
     }

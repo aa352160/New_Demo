@@ -1,4 +1,4 @@
-package com.example.jh352160.new_demo.test8;
+package com.example.jh352160.new_demo.test9;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -17,6 +17,9 @@ import com.example.jh352160.new_demo.R;
 public class CustomClock extends View{
 
     Context context;
+    int minut=1,hour=1;
+    int mWidth,mHeight;
+    boolean haveContent=false;
 
     public CustomClock(Context context) {
         super(context);
@@ -31,7 +34,7 @@ public class CustomClock extends View{
     }
 
     private void init(){
-
+        haveContent=false;
     }
 
     @Override
@@ -39,8 +42,10 @@ public class CustomClock extends View{
         super.onDraw(canvas);
         WindowManager wm=(WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
         Display display=wm.getDefaultDisplay();
-        int mWidth=display.getWidth();
-        int mHeight=display.getHeight();
+        mWidth=display.getWidth();
+        mHeight=display.getHeight();
+
+        canvas.save();
 
         //绘制外边圆
         Paint paintCircle=new Paint();
@@ -66,7 +71,25 @@ public class CustomClock extends View{
             }
             canvas.rotate(15,mWidth/2,mHeight/2);
         }
+        drawHands(canvas);
 
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        if (minut<60) {
+            minut++;
+        }else{
+            hour++;
+            minut=1;
+        }
+        canvas.restore();
+        invalidate();
+    }
+
+    private void drawHands(Canvas canvas){
         //画指针
         Paint paintHour=new Paint();
         paintHour.setStrokeWidth(20);
@@ -74,8 +97,14 @@ public class CustomClock extends View{
         paintMinute.setStrokeWidth(10);
         canvas.save();
         canvas.translate(mWidth/2,mHeight/2);
-        canvas.drawLine(0,0,100,200,paintHour);
-        canvas.drawLine(0,0,0,-300,paintMinute);
+
+        canvas.drawLine(0,0,(float) (200*(Math.cos(Math.PI*2*(hour/24.0)))),(float) (200*(Math.sin(Math.PI*2*(hour/24.0)))),paintHour);
+        canvas.drawLine(0,0,(float) (350*(Math.cos(Math.PI*2*(minut/60.0)))),(float) (350*(Math.sin(Math.PI*2*(minut/60.0)))),paintMinute);
         canvas.restore();
+    }
+
+    public void setTime(int hour,int minute){
+        this.hour=hour;
+        this.minut=minute;
     }
 }

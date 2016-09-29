@@ -28,6 +28,7 @@
         <activity android:name=".test8.Test8_2"/>
         <activity android:name=".test9.Test9"/>
         <activity android:name=".test9.Test9_2"/>
+        <activity android:name=".test9.Test9_3"/>
         <activity android:name=".test2.ListFirst"/>
         <activity android:name=".test2.ListSeconde"/>
         <activity android:name=".test2.ListThird"/>
