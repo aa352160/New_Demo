@@ -57,24 +57,25 @@ public class CustomClock extends View{
 
         //绘制刻度与时间
         Paint paintDegree=new Paint();
-        for (int i=0;i<24;i++){
+        for (int i=1;i<=12;i++){
             paintDegree.setStrokeWidth(5);
-            if (i==0||i==6||i==12||i==18) {
+            canvas.rotate(30,mWidth/2,mHeight/2);
+            if (i==12||i==3||i==6||i==9) {
                 paintDegree.setTextSize(30);
                 canvas.drawLine(mWidth / 2, mHeight / 2 - mWidth / 2,mWidth/2,mHeight/2-mWidth/2+60,paintDegree);
-                canvas.drawText(i+"",mWidth/2-paintDegree.measureText(i+"")/2,mHeight/2-mWidth/2+90,paintDegree);
+                //canvas.drawText(i+"",mWidth/2-paintDegree.measureText(i+"")/2,mHeight/2-mWidth/2+90,paintDegree);
             }else{
                 paintDegree.setStrokeWidth(3);
                 paintDegree.setTextSize(15);
                 canvas.drawLine(mWidth/2,mHeight/2-mWidth/2,mWidth/2,mHeight/2-mWidth/2+30,paintDegree);
-                canvas.drawText(i+"",mWidth/2-paintDegree.measureText(i+"")/2,mHeight/2-mWidth/2+60,paintDegree);
+                //canvas.drawText(i+"",mWidth/2-paintDegree.measureText(i+"")/2,mHeight/2-mWidth/2+60,paintDegree);
             }
-            canvas.rotate(15,mWidth/2,mHeight/2);
+//            canvas.rotate(30,mWidth/2,mHeight/2);
         }
         drawHands(canvas);
 
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -90,6 +91,9 @@ public class CustomClock extends View{
     }
 
     private void drawHands(Canvas canvas){
+
+        canvas.rotate(270,mWidth/2,mHeight/2);
+
         //画指针
         Paint paintHour=new Paint();
         paintHour.setStrokeWidth(20);
@@ -100,6 +104,8 @@ public class CustomClock extends View{
 
         canvas.drawLine(0,0,(float) (200*(Math.cos(Math.PI*2*(hour/24.0)))),(float) (200*(Math.sin(Math.PI*2*(hour/24.0)))),paintHour);
         canvas.drawLine(0,0,(float) (350*(Math.cos(Math.PI*2*(minut/60.0)))),(float) (350*(Math.sin(Math.PI*2*(minut/60.0)))),paintMinute);
+
+        canvas.rotate(90,mWidth/2,mHeight/2);
         canvas.restore();
     }
 
