@@ -1,11 +1,14 @@
 package com.example.jh352160.new_demo.test8;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +34,10 @@ public class Test8 extends AppCompatActivity{
         button3=(Button) findViewById(R.id.button3);
         button4=(Button)findViewById(R.id.button4);
         imageView=(ImageView)findViewById(R.id.imageView);
+
+        //tempDemo
+        final Drawable originBitmapDrawable=getResources().getDrawable(R.drawable.category_image5);
+        imageView.setImageDrawable(tintDrawable(originBitmapDrawable,ColorStateList.valueOf(Color.GREEN)));
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +123,12 @@ public class Test8 extends AppCompatActivity{
         }
         bmp.setPixels(newPx,0,width,0,0,width,height);
         return bmp;
+    }
+
+    public Drawable tintDrawable(Drawable drawable, ColorStateList color){
+        final Drawable wrappedDrawable= DrawableCompat.wrap(drawable);
+        DrawableCompat.setTintList(wrappedDrawable,color);
+        return wrappedDrawable;
     }
 
 }

@@ -2,7 +2,7 @@ package com.example.jh352160.new_demo.test9;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.graphics.Outline;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewOutlineProvider;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -23,7 +22,6 @@ import java.util.Iterator;
 
 import rx.Observable;
 import rx.Subscriber;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by jh352160 on 2016/9/27.
@@ -90,6 +88,7 @@ public class Test9 extends AppCompatActivity{
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                divisionJunp();
                 startActivity(new Intent(Test9.this,Test9_2.class), ActivityOptions.makeSceneTransitionAnimation(Test9.this,imageView,"imageview").toBundle());
             }
         });
@@ -148,5 +147,13 @@ public class Test9 extends AppCompatActivity{
         public Object next() {
             return null;
         }
+    }
+
+    private void divisionJunp(){
+        View root=this.getWindow().getDecorView().findViewById(android.R.id.content);
+        root.setDrawingCacheEnabled(true);
+        Bitmap mBitmap=root.getDrawingCache();
+        Bitmap mBmp1=Bitmap.createBitmap(mBitmap,0,0,mBitmap.getWidth(),mBitmap.getHeight()/2);
+        Bitmap mBmp2=Bitmap.createBitmap(mBitmap,0,mBitmap.getHeight()/2,mBitmap.getWidth(),mBitmap.getHeight()/2);
     }
 }

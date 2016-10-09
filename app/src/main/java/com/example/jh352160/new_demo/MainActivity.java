@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.jh352160.new_demo.test1.Test1;
+import com.example.jh352160.new_demo.test10.Test10;
 import com.example.jh352160.new_demo.test2.Test2;
 import com.example.jh352160.new_demo.test3.Test3;
 import com.example.jh352160.new_demo.test4.Test4;
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(MainActivity.this, Test9.class);
                 break;
             case R.id.button10:
-                intent = new Intent(MainActivity.this, Test8.class);
+                intent = new Intent(MainActivity.this, Test10.class);
                 break;
             case R.id.button11:
                 intent = new Intent(MainActivity.this, Test8.class);
