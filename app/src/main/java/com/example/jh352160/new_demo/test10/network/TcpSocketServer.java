@@ -18,7 +18,6 @@ import java.util.concurrent.Executors;
  */
 
 public class TcpSocketServer {
-
     //端口号
     private final static int serverPort=9999;
     //tcp套接字列表
@@ -82,22 +81,28 @@ public class TcpSocketServer {
             }
         }
 
+        // TODO: 2016/10/13 当应用被强制关闭时不会显示break
         @Override
         public void run() {
             try{
                 while(true){
-                    if ((msg=in.readLine())!=null){
-                        if (msg.equals("exit")){
-                            mList.remove(socket);
-                            in.close();
-                            msg="tips:user"+this.socket.getInetAddress()+" exit";
-                            socket.close();
-                            this.sendmsg();
-                            break;
-                        }else{
-                            msg=socket.getInetAddress()+":"+msg;
-                            this.sendmsg();
+                    if (socket.isConnected()) {
+                        if ((msg = in.readLine()) != null) {
+                            if (msg.equals("exit")) {
+                                mList.remove(socket);
+                                in.close();
+                                msg = "tips:user" + this.socket.getInetAddress() + " exit";
+                                socket.close();
+                                this.sendmsg();
+                                break;
+                            } else {
+                                msg = socket.getInetAddress() + ":" + msg;
+                                this.sendmsg();
+                            }
                         }
+                    }else{
+                        msg = "tips:user" + this.socket.getInetAddress() + " break";
+                        this.sendmsg();
                     }
                 }
             }catch (Exception e){
@@ -123,5 +128,4 @@ public class TcpSocketServer {
             }
         }
     }
-
 }
