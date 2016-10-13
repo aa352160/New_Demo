@@ -22,7 +22,8 @@
         android:id="@+id/editText" />
     
     <com.example.jh352160.new_demo.test10.RootSurfaceView
+        android:background="@drawable/category_image5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/category_image5"/>
+        />
 </LinearLayout>

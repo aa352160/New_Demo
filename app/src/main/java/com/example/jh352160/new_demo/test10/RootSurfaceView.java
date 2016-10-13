@@ -46,10 +46,10 @@ public class RootSurfaceView extends SurfaceView implements SurfaceHolder.Callba
         mViewHeight = displayMetrics.heightPixels;
         for (int index = 0; index < n; index++) {
             int attr = a.getIndex(index);
-            switch (index) {
+            switch (attr) {
                 case R.styleable.RootSurfaceView_background:
                     //mResourceId = a.getResourceId(attr, R.drawable.category_image5);
-                    mResourceId = R.drawable.category_image5;
+                    //mResourceId = getResources().getDrawable(R.drawable.category_image5);
                     break;
                 case R.styleable.RootSurfaceView_view_height:
                     mViewHeight = a.getDimension(attr, displayMetrics.heightPixels);
@@ -66,7 +66,8 @@ public class RootSurfaceView extends SurfaceView implements SurfaceHolder.Callba
     }
 
     private Bitmap getDrawBitmap(Context context, float width, float height) {
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), mResourceId);
+        //Bitmap bitmap = BitmapFactory.decodeResource(getResources(),mResourceId);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.category_image5);
         Bitmap resultBitmap = zoomImage(bitmap, width, height);
         return resultBitmap;
     }

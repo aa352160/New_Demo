@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.jh352160.new_demo.R;
+import com.example.jh352160.new_demo.test10.network.Test10_2;
+
+import rx.Observable;
 
 /**
  * Created by jh352160 on 2016/9/30.
@@ -53,6 +56,8 @@ public class Test10 extends AppCompatActivity {
                 inputMethodManager.hideSoftInputFromWindow(editText.getWindowToken(),0);
             }
         });
+
+        Observable.range(1,2);
     }
 
 }
