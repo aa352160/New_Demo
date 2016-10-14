@@ -33,10 +33,12 @@
         <activity android:name=".test9.Test9_2"/>
         <activity android:name=".test9.Test9_3"/>
         <activity android:name=".test10.Test10"/>
+        <activity android:name=".test11.Test11"/>
         <activity android:name=".test10.network.Test10_2"/>
         <activity android:name=".test2.ListFirst"/>
         <activity android:name=".test2.ListSeconde"/>
         <activity android:name=".test2.ListThird"/>
+
     </application>
 
 </manifest>
