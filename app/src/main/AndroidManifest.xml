@@ -35,9 +35,12 @@
         <activity android:name=".test10.Test10"/>
         <activity android:name=".test11.Test11"/>
         <activity android:name=".test10.network.Test10_2"/>
+        <activity android:name=".test10.massager.MessengerActivity"/>
         <activity android:name=".test2.ListFirst"/>
         <activity android:name=".test2.ListSeconde"/>
         <activity android:name=".test2.ListThird"/>
+
+        <service android:name=".test10.massager.MessengerService"/>
 
     </application>
 

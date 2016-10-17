@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.jh352160.new_demo.R;
+import com.example.jh352160.new_demo.test10.massager.MessengerActivity;
 import com.example.jh352160.new_demo.test10.network.Test10_2;
 
 import rx.Observable;
@@ -22,8 +23,7 @@ import rx.Observable;
 
 public class Test10 extends AppCompatActivity {
 
-    Button button;
-    Button button2;
+    Button button,button2,button3;
     EditText editText;
 
 
@@ -33,6 +33,7 @@ public class Test10 extends AppCompatActivity {
         setContentView(R.layout.test10);
         button=(Button)findViewById(R.id.button);
         button2=(Button)findViewById(R.id.button2);
+        button3=(Button)findViewById(R.id.button3);
         editText=(EditText)findViewById(R.id.editText);
 
         editText.setInputType(EditorInfo.TYPE_CLASS_TEXT);
@@ -54,6 +55,14 @@ public class Test10 extends AppCompatActivity {
             public void onClick(View v) {
                 InputMethodManager inputMethodManager=(InputMethodManager)Test10.this.getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputMethodManager.hideSoftInputFromWindow(editText.getWindowToken(),0);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Test10.this,MessengerActivity.class);
+                startActivity(intent);
             }
         });
 
