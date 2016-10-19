@@ -1,12 +1,8 @@
 package com.example.jh352160.new_demo.test11;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 import com.example.jh352160.new_demo.R;
 
@@ -16,45 +12,53 @@ import com.example.jh352160.new_demo.R;
 
 public class Test11 extends AppCompatActivity {
 
-    WebView mWebView;
-
-    private static final String TAG=Test11.class.getSimpleName();
-    //web缓存目录
-    private static final String APP_CACHE_DIRNAME="/webcache";
-    private String url;
+    TextView textView,textView2,textView3;
+    ScoreView scoreView,scoreView2,scoreView3;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.test11);
-        mWebView=(WebView)findViewById(R.id.webView);
 
-        WebSettings webSettings=mWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        url="http://blog.csdn.net/wwj_748/article/details/44810283";
+        scoreView=(ScoreView)findViewById(R.id.scoreView);
+        scoreView2=(ScoreView)findViewById(R.id.scoreView2);
+        scoreView3=(ScoreView)findViewById(R.id.scoreView3);
+        textView=(TextView)findViewById(R.id.textView);
+        textView2=(TextView)findViewById(R.id.textView2);
+        textView3=(TextView)findViewById(R.id.textView3);
+        float i=scoreView.getScore();
+        textView.setText(""+i);
 
-        findView();
-    }
-
-    public void findView(){
-        initWebView();
-        mWebView.setWebViewClient(new WebViewClient(){
+        scoreView.setHaveHalf(true);
+        scoreView.setStar(6);
+        scoreView.setScore(0.5f);
+        scoreView.setScoreChangeListener(new ScoreView.ScoreChangeListener() {
             @Override
-            public void onLoadResource(WebView view, String url) {
-                Log.i(TAG,"onLoadResource url="+url);
-                super.onLoadResource(view, url);
-            }
-
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                Log.i(TAG,"intercept url="+url);
-                return super.shouldOverrideUrlLoading(view, url);
+            public void scoreChange() {
+                textView.setText(scoreView.getScore()+"");
             }
         });
-    }
 
-    private void initWebView() {
+        scoreView2.setHaveHalf(false);
+        scoreView2.setStar(6);
+        scoreView2.setScore(3);
+        scoreView2.isEnable(false);
+        scoreView2.setScoreChangeListener(new ScoreView.ScoreChangeListener() {
+            @Override
+            public void scoreChange() {
+                textView2.setText(scoreView2.getScore()+"");
+            }
+        });
 
+        scoreView3.setHaveHalf(false);
+        scoreView3.setStar(3);
+        scoreView3.setStarSize(200);
+        scoreView3.setScoreChangeListener(new ScoreView.ScoreChangeListener() {
+            @Override
+            public void scoreChange() {
+                textView3.setText(scoreView3.getScore()+"");
+            }
+        });
     }
 
 }
