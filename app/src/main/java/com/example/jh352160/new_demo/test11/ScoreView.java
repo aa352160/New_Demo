@@ -22,6 +22,9 @@ public class ScoreView extends LinearLayout {
     private ScoreChangeListener mScoreChangeListener;
     private boolean haveHalf = false,enable=true;
     private int starSize=100;
+    private @DrawableRes int fillStar = R.drawable.ic_star_selected;
+    private @DrawableRes int halfStar = R.drawable.ic_star_select_half;
+    private @DrawableRes int emptyStar = R.drawable.ic_star_normal;
 
     public ScoreView(Context context) {
         super(context);
@@ -40,7 +43,7 @@ public class ScoreView extends LinearLayout {
         this.setOrientation(HORIZONTAL);
         for (int i = 0; i < imageViews.length; i++) {
             imageViews[i] = new ImageView(context);
-            imageViews[i].setImageResource(R.drawable.ic_star_normal);
+            imageViews[i].setImageResource(emptyStar);
             imageViews[i].setLayoutParams(new ViewGroup.LayoutParams(starSize, starSize));
             this.addView(imageViews[i]);
         }
@@ -119,18 +122,18 @@ public class ScoreView extends LinearLayout {
 
     private void refresh(int position, boolean half) {
         for (int j = 0; j < imageViews.length; j++) {
-            imageViews[j].setImageResource(R.drawable.ic_star_normal);
+            imageViews[j].setImageResource(emptyStar);
         }
         if (half) {
             for (int j = 0; j < position; j++) {
-                imageViews[j].setImageResource(R.drawable.ic_star_selected);
+                imageViews[j].setImageResource(fillStar);
             }
             if (haveHalf) {
-                imageViews[position - 1].setImageResource(R.drawable.ic_star_select_half);
+                imageViews[position - 1].setImageResource(halfStar);
             }
         } else {
             for (int j = 0; j < position; j++) {
-                imageViews[j].setImageResource(R.drawable.ic_star_selected);
+                imageViews[j].setImageResource(fillStar);
             }
         }
     }
@@ -156,4 +159,15 @@ public class ScoreView extends LinearLayout {
         }
     }
 
+        public void setFillStar(@DrawableRes int fillStar) {
+        this.fillStar = fillStar;
+    }
+
+    public void setHalfStar(@DrawableRes int halfStar) {
+        this.halfStar = halfStar;
+    }
+
+    public void setEmptyStar(@DrawableRes int emptyStar) {
+        this.emptyStar = emptyStar;
+    }
 }
